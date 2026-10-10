@@ -22,21 +22,32 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
+import gradexBanner from "./assets/gradex-banner.webp";
+import gradexLogo from "./assets/gradex-logo.png";
+import tafSubmission from "./assets/TAF_R26-SE-025.pdf";
+import proposalPresentation from "./assets/R26-SE-025-proposal presentation.pptx";
+import progressPresentation01 from "./assets/R26-SE-025-progress presentation 1.pptx";
+import progressPresentation02 from "./assets/R26-SE-025-progress presentation 2.pptx";
+import senarathnaProposal from "./assets/IT22262554-proposal.pdf";
+import senarathnaResearchPaper from "./assets/IT22262554-research paper.pdf";
+import herathProposal from "./assets/IT22557056-proposal.pdf";
+import wickramarathneProposal from "./assets/IT22239198-proposal.pdf";
+import hemarthaneProposal from "./assets/IT22134776-Proposal.pdf";
 import "./styles.css";
 
 const docs = [
-  { label: "TAF Submission", file: "TAF_R26-SE-025.pdf", type: "PDF" },
-  { label: "Proposal Presentation", file: "R26-SE-025-proposal presentation.pptx", type: "PPTX" },
-  { label: "Progress Presentation 01", file: "R26-SE-025-progress presentation 1.pptx", type: "PPTX" },
-  { label: "Progress Presentation 02", file: "R26-SE-025-progress presentation 2.pptx", type: "PPTX" },
+  { label: "TAF Submission", file: "TAF_R26-SE-025.pdf", url: tafSubmission, type: "PDF" },
+  { label: "Proposal Presentation", file: "R26-SE-025-proposal presentation.pptx", url: proposalPresentation, type: "PPTX" },
+  { label: "Progress Presentation 01", file: "R26-SE-025-progress presentation 1.pptx", url: progressPresentation01, type: "PPTX" },
+  { label: "Progress Presentation 02", file: "R26-SE-025-progress presentation 2.pptx", url: progressPresentation02, type: "PPTX" },
 ];
 
 const memberDocs = [
-  { label: "A.M. Senarathna · Proposal", file: "IT22262554-proposal.pdf", type: "PDF" },
-  { label: "A.M. Senarathna · Research paper", file: "IT22262554-research paper.pdf", type: "PDF" },
-  { label: "B.K.H.M.B.L. Herath · Proposal", file: "IT22557056-proposal.pdf", type: "PDF" },
-  { label: "H.I.B. Wickramarathne · Proposal", file: "IT22239198-proposal.pdf", type: "PDF" },
-  { label: "L.S.B. Hemarathne · Proposal", file: "IT22134776-Proposal.pdf", type: "PDF" },
+  { label: "A.M. Senarathna · Proposal", file: "IT22262554-proposal.pdf", url: senarathnaProposal, type: "PDF" },
+  { label: "A.M. Senarathna · Research paper", file: "IT22262554-research paper.pdf", url: senarathnaResearchPaper, type: "PDF" },
+  { label: "B.K.H.M.B.L. Herath · Proposal", file: "IT22557056-proposal.pdf", url: herathProposal, type: "PDF" },
+  { label: "H.I.B. Wickramarathne · Proposal", file: "IT22239198-proposal.pdf", url: wickramarathneProposal, type: "PDF" },
+  { label: "L.S.B. Hemarathne · Proposal", file: "IT22134776-Proposal.pdf", url: hemarthaneProposal, type: "PDF" },
 ];
 
 const milestoneDownloads = {
@@ -74,7 +85,7 @@ function scrollTo(id) {
 function Logo() {
   return (
     <button className="logo" onClick={() => scrollTo("home")} aria-label="Go to home">
-      <img src="/docs/gradex-logo.png" alt="Gradex AI" />
+      <img src={gradexLogo} alt="Gradex AI" />
     </button>
   );
 }
@@ -134,7 +145,7 @@ function App() {
               <div className="hero-proof"><div className="proof-avatars"><span>AS</span><span>BH</span><span>HW</span><span>LH</span></div><span>Built by a student research team<br /><b>at SLIIT</b></span></div>
             </div>
             <div className="hero-art">
-              <div className="hero-image-frame"><img src="/docs/gradex-banner.webp" alt="Gradex AI assessment dashboard and grading modules" /></div>
+              <div className="hero-image-frame"><img src={gradexBanner} alt="Gradex AI assessment dashboard and grading modules" /></div>
               <div className="floating-note note-one"><Check size={15} /> Human-centered AI</div>
               <div className="floating-note note-two"><Sparkles size={15} /> Intelligent evaluation</div>
             </div>
@@ -188,17 +199,17 @@ function App() {
 
         <section id="milestones" className="section section-anchor milestones-section">
           <div className="container milestones-layout"><SectionHeading eyebrow="03 / Milestones" title="From first question to final paper." text="Follow the research journey as Gradex AI moves from a question on paper to a validated assessment experience." />
-            <div className="timeline">{milestones.map(([number, title, text], index) => <div className="timeline-item" key={title}><div className="timeline-index">{number}</div><div className="timeline-line">{index < milestones.length - 1 && <span />}</div><div className={index === 4 ? "timeline-content active" : "timeline-content"}><div><h3>{title}</h3><p>{text}</p>{milestoneDownloads[title] && <div className="stepper-downloads">{milestoneDownloads[title].map(doc => <a href={`/docs/${encodeURIComponent(doc.file)}`} download key={doc.file}><Download size={12} /> {doc.label}</a>)}</div>}</div>{index === 4 && <span className="current-tag">Current focus</span>}</div></div>)}</div>
+            <div className="timeline">{milestones.map(([number, title, text], index) => <div className="timeline-item" key={title}><div className="timeline-index">{number}</div><div className="timeline-line">{index < milestones.length - 1 && <span />}</div><div className={index === 4 ? "timeline-content active" : "timeline-content"}><div><h3>{title}</h3><p>{text}</p>{milestoneDownloads[title] && <div className="stepper-downloads">{milestoneDownloads[title].map(doc => <a href={doc.url} download={doc.file} key={doc.file}><Download size={12} /> {doc.label}</a>)}</div>}</div>{index === 4 && <span className="current-tag">Current focus</span>}</div></div>)}</div>
           </div>
         </section>
 
         <section id="presentations" className="section section-anchor presentations-section">
           <div className="container"><SectionHeading eyebrow="04 / Presentations & papers" title="Explore the work behind the interface." text="Download our key submissions and presentation materials to follow the evolution of the research." />
-            <div className="document-grid">{docs.slice(1).map((doc, index) => <a className="document-card" href={`/docs/${encodeURIComponent(doc.file)}`} download key={doc.file}><div className="doc-icon"><FileText size={21} /></div><div><span className="doc-type">{doc.type} · 0{index + 1}</span><h3>{doc.label}</h3><span className="download-label">Download file <Download size={14} /></span></div><ArrowUpRight className="doc-arrow" size={18} /></a>)}</div>
+            <div className="document-grid">{docs.slice(1).map((doc, index) => <a className="document-card" href={doc.url} download={doc.file} key={doc.file}><div className="doc-icon"><FileText size={21} /></div><div><span className="doc-type">{doc.type} · 0{index + 1}</span><h3>{doc.label}</h3><span className="download-label">Download file <Download size={14} /></span></div><ArrowUpRight className="doc-arrow" size={18} /></a>)}</div>
           </div>
         </section>
 
-        <section className="banner-section section-anchor" id="banner"><div className="container"><img src="/docs/gradex-banner.webp" alt="Gradex AI campaign banner" /></div></section>
+        <section className="banner-section section-anchor" id="banner"><div className="container"><img src={gradexBanner} alt="Gradex AI campaign banner" /></div></section>
 
         <section id="team" className="section section-anchor team-section">
           <div className="container"><SectionHeading eyebrow="05 / Our team" title="The people behind the research." text="A collaborative team investigating what assessment can become when technology and academic care work together." />
