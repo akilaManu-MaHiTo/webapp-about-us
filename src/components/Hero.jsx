@@ -1,50 +1,104 @@
 import React from "react";
-import {
-  ArrowUpRight,
-  BrainCircuit,
-  Check,
-  ChevronDown,
-  Mic2,
-  Network,
-  ScanLine,
-  Sparkles,
-} from "lucide-react";
-import gradexBanner from "../assets/gradex-banner.webp";
+import { ArrowUpRight, Check } from "lucide-react";
 import { scrollToSection } from "../lib/scroll.js";
 
-const features = [
-  ["01", "Diagram Grading", Network, "Identifies and extracts diagrams from handwritten examination papers using computer vision. It compares diagram structures, entities, relationships, and relevant elements against reference diagrams and marking rubrics to assign marks and provide feedback."],
-  ["02", "Handwritten Grading", ScanLine, "Evaluates handwritten essay answers by extracting text using OCR and handwriting recognition. It analyzes semantic meaning, key concepts, reasoning, and answer relevance against marking schemes to generate marks and constructive feedback."],
-  ["03", "Question Making", BrainCircuit, "Analyzes student performance at question and topic levels to identify weaknesses and learning gaps. It generates personalized practice questions and dashboards for performance trends, difficult questions, topic progress, and future examination patterns."],
-  ["04", "Viva Evaluation", Mic2, "Evaluates online viva responses by analyzing spoken answers, speech characteristics, and relevant visual features. It assesses accuracy, conceptual understanding, clarity, and reasoning, generating suggested scores, explanations, and feedback to assist examiners."],
+const criteria = [
+  ["Concept accuracy", 92],
+  ["Diagram structure", 84],
+  ["Reasoning depth", 88],
+];
+
+const modules = [
+  ["01", "Diagram Grading", "Structure and labels checked against the marking scheme."],
+  ["02", "Handwritten Grading", "OCR and semantic review of written responses."],
+  ["03", "Question Making", "Practice sets generated from identified learning gaps."],
+  ["04", "Viva Evaluation", "Speech and reasoning signals for oral examinations."],
 ];
 
 export default function Hero() {
   return (
     <section id="home" className="hero section-anchor">
+      <div className="hero-surface" aria-hidden="true" />
       <div className="container hero-grid">
         <div className="hero-copy">
-          <div className="pill"><span className="pulse-dot" /> Research project · R26-SE-025</div>
-          <h1>Welcome to <em>Gradex AI.</em></h1>
-          <p className="hero-lede">Smarter grading. Deeper insight. Better outcomes.</p>
-          <p className="hero-description">An AI-powered assessment platform built to make higher education more consistent, insightful, and human-centered.</p>
-          <div className="hero-actions">
-            <button className="button button-dark" onClick={() => scrollToSection("scope")}>Explore our research <ArrowUpRight size={17} /></button>
-            <button className="text-button" onClick={() => scrollToSection("about")}>Learn about the project <ChevronDown size={16} /></button>
+          <div className="hero-eyebrow hero-rise" style={{ "--delay": "40ms" }}>
+            <span className="hero-rule" aria-hidden="true" />
+            <span>Research project · R26-SE-025</span>
+            <span className="hero-dot" aria-hidden="true" />
+            <span>SLIIT</span>
           </div>
-          <div className="hero-proof"><div className="proof-avatars"><span>AS</span><span>BH</span><span>HW</span><span>LH</span></div><span>Built by a student research team<br /><b>at SLIIT</b></span></div>
+
+          <h1 className="hero-title hero-rise" style={{ "--delay": "100ms" }}>
+            A consistent standard for <em>every submission.</em>
+          </h1>
+
+          <p className="hero-description hero-rise" style={{ "--delay": "170ms" }}>
+            Gradex AI is a research-led assessment platform that reads handwritten answers, diagrams, and viva
+            responses — then scores them against the rubric, with a human in the loop.
+          </p>
+
+          <div className="hero-actions hero-rise" style={{ "--delay": "230ms" }}>
+            <button className="button button-dark" onClick={() => scrollToSection("scope")}>
+              Explore the research <ArrowUpRight size={16} aria-hidden="true" />
+            </button>
+            <button className="text-button" onClick={() => scrollToSection("about")}>
+              About the project <ArrowUpRight size={15} aria-hidden="true" />
+            </button>
+          </div>
+
+          <div className="hero-proof hero-rise" style={{ "--delay": "290ms" }}>
+            <div className="proof-avatars" aria-hidden="true">
+              <span>AS</span><span>BH</span><span>HW</span><span>LH</span>
+            </div>
+            <span>
+              Final-year research team · <b>SLIIT</b>
+            </span>
+          </div>
         </div>
-        <div className="hero-art">
-          <div className="hero-image-frame"><img src={gradexBanner} alt="Gradex AI assessment dashboard and grading modules" /></div>
-          <div className="floating-note note-one"><Check size={15} /> Human-centered AI</div>
-          <div className="floating-note note-two"><Sparkles size={15} /> Intelligent evaluation</div>
+
+        <div className="hero-figure hero-rise" style={{ "--delay": "160ms" }}>
+          <figure className="eval-card">
+            <div className="eval-head">
+              <span className="eval-label">Evaluation record</span>
+              <span className="eval-status"><i aria-hidden="true" /> Reviewed</span>
+            </div>
+
+            <div className="eval-body">
+              <div className="eval-score">
+                <span className="eval-score-label">Rubric match</span>
+                <div className="eval-score-value">
+                  <b>87</b><span>/ 100</span>
+                </div>
+                <span className="eval-score-note">IT22262554 · Answer 04</span>
+              </div>
+
+              <div className="eval-criteria">
+                {criteria.map(([label, value], index) => (
+                  <div className="eval-row" key={label}>
+                    <span className="eval-row-label">{label}</span>
+                    <span className="eval-row-value">{value}</span>
+                    <span className="eval-bar">
+                      <i style={{ "--val": `${value}%`, "--bar-delay": `${420 + index * 110}ms` }} />
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <figcaption className="eval-foot">
+              <span>Rubric v2.1 · 4 criteria</span>
+              <span className="eval-verified"><Check size={13} aria-hidden="true" /> Human verified</span>
+            </figcaption>
+          </figure>
+          <p className="hero-figure-note">Illustrative output from the evaluation pipeline.</p>
         </div>
       </div>
-      <div className="container feature-strip">
-        {features.map(([number, label, Icon, text]) => (
-          <article className="feature-chip" key={label}>
-            <div className="feature-chip-top"><span>{number}</span><Icon size={19} /></div>
-            <h3>{label}</h3>
+
+      <div className="container hero-modules">
+        {modules.map(([number, label, text], index) => (
+          <article className="hero-module hero-rise" style={{ "--delay": `${340 + index * 60}ms` }} key={label}>
+            <span className="hero-module-index">{number}</span>
+            <h2>{label}</h2>
             <p>{text}</p>
           </article>
         ))}
