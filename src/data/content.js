@@ -25,8 +25,8 @@ export const supervisor = {
 
 export const team = [
   { name: "A.M. Senarathna", id: "IT22262554", email: "it22262554@my.sliit.lk", phone: "075 638 2579", initials: "AS", image: akilaPhoto },
-  { name: "B.K.H.M.B.L. Herath", id: "IT22557056", email: "it22557056@my.sliit.lk", phone: "070 456 1240", initials: "BH", image: harithaPhoto },
-  { name: "H.I.B. Wickramarathne", id: "IT22239198", email: "it22239198@my.sliit.lk", phone: "074 005 6156", initials: "HW", image: buddhilaPhoto },
+  { name: "B.K.H.M.B.L. Herath", id: "IT22557056", email: "it22557056@my.sliit.lk", phone: "070 456 1240", initials: "BH", image: buddhilaPhoto },
+  { name: "H.I.B. Wickramarathne", id: "IT22239198", email: "it22239198@my.sliit.lk", phone: "074 005 6156", initials: "HW", image: harithaPhoto },
   { name: "L.S.B. Hemarathne", id: "IT22134776", email: "it22134776@my.sliit.lk", phone: "076 474 8263", initials: "LH", image: supunPhoto },
 ];
 
