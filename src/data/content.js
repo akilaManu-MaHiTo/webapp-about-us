@@ -1,3 +1,4 @@
+import akilaPhoto from "../assets/akila-manu.jpeg";
 import supunPhoto from "../assets/supun.png";
 import harithaPhoto from "../assets/haritha.png";
 import buddhilaPhoto from "../assets/buddhila.png";
@@ -23,7 +24,7 @@ export const supervisor = {
 };
 
 export const team = [
-  { name: "A.M. Senarathna", id: "IT22262554", email: "it22262554@my.sliit.lk", phone: "075 638 2579", initials: "AS", image: null },
+  { name: "A.M. Senarathna", id: "IT22262554", email: "it22262554@my.sliit.lk", phone: "075 638 2579", initials: "AS", image: akilaPhoto },
   { name: "B.K.H.M.B.L. Herath", id: "IT22557056", email: "it22557056@my.sliit.lk", phone: "070 456 1240", initials: "BH", image: harithaPhoto },
   { name: "H.I.B. Wickramarathne", id: "IT22239198", email: "it22239198@my.sliit.lk", phone: "074 005 6156", initials: "HW", image: buddhilaPhoto },
   { name: "L.S.B. Hemarathne", id: "IT22134776", email: "it22134776@my.sliit.lk", phone: "076 474 8263", initials: "LH", image: supunPhoto },
@@ -35,7 +36,7 @@ export const milestones = [
   ["03", "Progress Presentation 01", "Sharing the first stage of findings, scope, and direction."],
   ["04", "Progress Presentation 02", "Demonstrating progress and validating the research approach."],
   ["05", "Final Presentation", "Presenting the complete solution and research outcomes."],
-  ["06", "Final Reports", "Individual final reports from each research team member."],
+  ["06", "Final Reports (Thesis)", "Individual final reports from each research team member."],
   ["07", "Final Research Papers", "Documenting the contribution, evaluation, and conclusions."],
 ];
 

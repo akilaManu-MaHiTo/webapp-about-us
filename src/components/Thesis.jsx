@@ -23,7 +23,7 @@ export default function Thesis() {
       <div className="container">
         <SectionHeading
           eyebrow="04 / Thesis"
-          title="Final reports from every member."
+          title="Final reports (Thesis) from every member."
           text="Each research team member documented their individual contribution, evaluation, and conclusions in a final report."
         />
         <div className="document-grid">

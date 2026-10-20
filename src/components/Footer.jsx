@@ -14,7 +14,7 @@ export default function Footer({ navItems }) {
         </div>
       </div>
       <div className="container footer-bottom">
-        <span>© 2025 Gradex AI · R26-SE-025</span>
+        <span>© 2026 Gradex AI · R26-SE-025</span>
         <span>Built for better learning.</span>
         <button onClick={() => scrollToSection("home")}>Back to top ↑</button>
       </div>
