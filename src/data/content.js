@@ -48,9 +48,17 @@ export const aboutCards = [
 
 export const scopeItems = [
   ["Literature Survey", "Existing systems such as Moodle, Blackboard, and Canvas mainly support objective questions and basic automated grading. Research on NLP, deep learning, and diagram evaluation has improved automated assessment, but evaluating handwritten answers, diagrams, mathematical expressions, and viva responses together remains challenging."],
-  ["Research Gap", "Existing assessment systems lack a unified framework for evaluating multiple academic response formats. They also have limitations in grading consistency, explainability, personalized learning insights, and predictive analytics."],
+  ["Research Gap", "Research examines automated essay scoring [1], multimodal learning analytics [2], explainable educational AI [3], automatic question generation [4], and student-performance prediction [5]. Drawing on these strands, our study investigates how to integrate multiple academic response formats with consistent grading, understandable feedback, and personalized learning insights in one assessment workflow."],
   ["Research Problem", "Traditional academic assessment is time-consuming, costly, and prone to inconsistent grading. Existing automated systems struggle to evaluate diverse student responses and identify learning gaps effectively, creating a need for an integrated AI-based assessment system."],
   ["Objectives", "The main objective is to develop an AI-powered multimodal academic evaluation system. Individual objectives are to analyze question-level performance, identify students’ weak areas, generate personalized practice questions, and predict potential future examination question patterns."],
   ["Methodology", "The methodology involves reviewing existing research, collecting and preprocessing academic data, developing AI-based evaluation and analytics models, and integrating them into the system. Finally, the system will be tested to evaluate its accuracy, effectiveness, and reliability."],
   ["Tools & Technologies", "The proposed technologies include TensorFlow, PyTorch, OpenCV, NLP libraries, transformer models, OCR, and machine-learning techniques. Python, predictive analytics, NLP-based question generation, and data visualization may be used depending on the final implementation."],
+];
+
+export const researchGapReferences = [
+  ["An automated essay scoring systems: a systematic literature review", "Artificial Intelligence Review, 2022", "https://doi.org/10.1007/s10462-021-10068-2"],
+  ["Artificial intelligence in multimodal learning analytics: A systematic literature review", "Computers and Education: Artificial Intelligence, 2025", "https://doi.org/10.1016/j.caeai.2025.100426"],
+  ["Explainable Artificial Intelligence in education", "Computers and Education: Artificial Intelligence, 2022", "https://doi.org/10.1016/j.caeai.2022.100074"],
+  ["A Systematic Review of Automatic Question Generation for Educational Purposes", "International Journal of Artificial Intelligence in Education, 2020", "https://doi.org/10.1007/s40593-019-00186-y"],
+  ["Predicting Student Performance Using Data Mining and Learning Analytics Techniques: A Systematic Literature Review", "Applied Sciences, 2021", "https://doi.org/10.3390/app11010237"],
 ];

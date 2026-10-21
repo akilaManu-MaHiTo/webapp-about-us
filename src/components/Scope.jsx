@@ -1,6 +1,6 @@
 import React from "react";
 import SectionHeading from "./SectionHeading.jsx";
-import { scopeItems } from "../data/content.js";
+import { researchGapReferences, scopeItems } from "../data/content.js";
 
 export default function Scope() {
   return (
@@ -18,6 +18,19 @@ export default function Scope() {
               <div>
                 <h3>{title}</h3>
                 <p>{text}</p>
+                {title === "Research Gap" && (
+                  <div className="scope-references">
+                    <h4>References</h4>
+                    <ol>
+                      {researchGapReferences.map(([referenceTitle, publication, url]) => (
+                        <li key={url}>
+                          <a href={url}>{referenceTitle}</a>
+                          <small>{publication}</small>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                )}
               </div>
             </article>
           ))}
