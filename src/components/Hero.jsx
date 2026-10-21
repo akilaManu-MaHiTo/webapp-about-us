@@ -46,7 +46,8 @@ export default function Hero() {
           </div>
 
           <h1 className="hero-title hero-rise" style={{ "--delay": "100ms" }}>
-            A consistent standard for <em>every submission.</em>
+            AI-Integrated Multi-Modal Academic Evaluation, Performance Intelligence,
+            and Automated Viva <em>Assessment System</em>
           </h1>
 
           <p
